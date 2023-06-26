@@ -24,7 +24,6 @@ namespace raspicam{
     bool open (bool StartCapture=true);
     bool startCapture;
 
-
     void setUserCallback(void (*userCallback) (void*), void* data=0);
 
     bool isOpened(); const;
@@ -35,8 +34,6 @@ namespace raspicam{
     unsigned char *getImageBufferData() const;
 
     size_t getImageufferSize() const;
-
-
 
     void release();
     void setFormat(RASPICAM_FORMAT fmt);
@@ -85,23 +82,12 @@ namespace raspicam{
     bool isHorizontallyFlipped(); const ;
     bool isVerticallyFlipped(); const ;
 
-
-    /** Returns an id of the camera. We assume the camera id is the one of the raspberry
-    *the id is obtained using raspberry serial number obtained in /proc/cpuinfo
-    */
     string getId(); const;
 
-
-
-    /**Returns the size of the required buffer for the different image types in retrieve
-     */
     size_t getImageTypeSize ( RASPICAM_FORMAT type ) const;
     private:
     _private::Private_Impl *_impl;
 };
 }
-
 }
-
-
 #endif
